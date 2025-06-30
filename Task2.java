@@ -14,4 +14,4 @@ public class Task2{
         String output = "H" + three + one + one + zero + " " + w + zero + r + l + d + " " + num + " " + t;
         System.out.println(output);
     }
-}
+} 
