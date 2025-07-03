@@ -1,30 +1,44 @@
 import java.util.*;
-import java.util.Scanner;
+
 
 public class Task5 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        List <Integer> num = new ArrayList<>();
+        int nums;
+
          System.out.print("Enter 1st number: ");
-        int num1 = scan.nextInt();
+         nums = scan.nextInt();
+         num.add(nums);
          System.out.print("Enter 2nd number: ");
-        int num2 = scan.nextInt();
+         nums = scan.nextInt();
+         num.add(nums);
          System.out.print("Enter 3rd number: ");
-        int num3 = scan.nextInt();
+         nums = scan.nextInt();
+         num.add(nums);
       
-        if ((num1 == num2)&&(num2 == num3)){
-             System.out.println("All numbers are equal");
+         Collections.sort(num);
+         int largest = num.get(2);
+
+        if (num.get(0).equals(num.get(1)) || num.get(1).equals(num.get(2)) || num.get(0).equals(num.get(2))) {
+            System.out.println("All numbers are equal");
         } else {
-            int largest;
-            if (num1 >= num2&&num2 >= num3){
-                largest = num1;
-            }
-            else if (num1 >= num2&&num2 >= num3){
-                largest = num2;
-            }else{
-                largest = num3;
-            } 
             System.out.println(largest);
-        
         }
+            // if ((num1 == num2)&&(num2 == num3)){
+        //      
+        // } else {
+        //     
+        //     if (num1 >= num2&&num2 >= num3){
+        //         largest = num1;
+        //     }
+        //     else if (num1 >= num2&&num2 >= num3){
+        //         largest = num2;
+        //     }else{
+        //         largest = num3;
+        //     } 
+        //     
+        
+        // }
     }
 }
