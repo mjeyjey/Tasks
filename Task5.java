@@ -6,6 +6,7 @@ public class Task5 {
         Scanner scan = new Scanner(System.in);
         List <Integer> num = new ArrayList<>();
         int nums;
+        
 
          System.out.print("Enter 1st number: ");
          nums = scan.nextInt();
@@ -16,9 +17,9 @@ public class Task5 {
          System.out.print("Enter 3rd number: ");
          nums = scan.nextInt();
          num.add(nums);
-      
-         Collections.sort(num);
          int largest = num.get(2);
+         Collections.sort(num);
+         
 
         if (num.get(0).equals(num.get(1)) || num.get(1).equals(num.get(2)) || num.get(0).equals(num.get(2))) {
             System.out.println("All numbers are equal");
