@@ -5,7 +5,7 @@ class Student {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    // my code
+    // my code 
     public void printFullName() {
         System.out.println(firstName+" "+ lastName);
     }
