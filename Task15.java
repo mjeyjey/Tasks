@@ -56,14 +56,14 @@ class Rectangle extends AbstractShape {
 
 public class Task15 {
     public static void main(String[] args) {
-        Circle circle = new Circle(null, 0, 0, 5);
-        Rectangle rectangle = new Rectangle(null, 4, 6);
+        Circle c = new Circle(null, 0, 0, 5);
+        Rectangle r = new Rectangle(null, 4, 6);
 
         System.out.println("Circle: ");
-        System.out.println("Area: "+ circle.calculatedArea());
-        System.out.println("Perimeter: "+ circle.calculatedPerimeter());
+        System.out.println("Area: "+ c.calculatedArea());
+        System.out.println("Perimeter: "+ c.calculatedPerimeter());
         System.out.println("\nRectangle: ");
-        System.out.println("Area: "+ rectangle.calculatedArea());
-        System.out.println("Perimeter: "+ rectangle.calculatedPerimeter());
+        System.out.println("Area: "+ r.calculatedArea());
+        System.out.println("Perimeter: "+ r.calculatedPerimeter());
     }
 }
