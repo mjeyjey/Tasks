@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.*;
 
 
-public class esters {
+public class testers {
 @Test
 void sampleTest1() {
     List<Integer> numbers = Arrays.asList(1, 2, 3);
