@@ -24,7 +24,6 @@ public class UserService {
         loadUsers();
     }
 
-    // load user data from file or initialize default accounts
     private void loadUsers() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATA_FILE))) {
             users = (Map<String, User>) ois.readObject();
@@ -35,7 +34,6 @@ public class UserService {
         }
     }
 
-    // create default user accounts
     private void initializeDefaultUsers() {
         users.clear();
         users.put("admin", new User("admin", "admin123", true));
@@ -55,7 +53,6 @@ public class UserService {
         }
     }
 
-    // authenticate user and set session
     public boolean login(String username, String password) {
         User user = users.get(username);
         if (user != null && user.getPassword().equals(password)) {
@@ -65,27 +62,22 @@ public class UserService {
         return false;
     }
 
-    // get current logged-in user
     public User getCurrentUser() {
         return currentUser;
     }
 
-    // logout current user
     public void logout() {
         currentUser = null;
     }
 
-    // get all registered users (in admin dashboard)
     public Map<String, User> getAllUsers() {
         return users;
     }
 
-    // get specific user by username
     public User getUserByUsername(String username) {
         return users.get(username);
     }
 
-    // register a new user (returns false if username is taken)
     public boolean registerUser(String username, String password) {
         if (users.containsKey(username)) return false;
         users.put(username, new User(username, password, false));
@@ -93,21 +85,18 @@ public class UserService {
         return true;
     }
 
-    // change username and update file references
     public boolean changeUsername(String oldUsername, String newUsername) {
         if (!users.containsKey(oldUsername) || users.containsKey(newUsername)) {
-            return false; // old must exist, new must not
+            return false; 
         }
 
         User user = users.remove(oldUsername);
         user.setUsername(newUsername);
         users.put(newUsername, user);
 
-        // rename associated files
         renameFile("data/" + oldUsername + "_balance.dat", "data/" + newUsername + "_balance.dat");
         renameFile("data/" + oldUsername + "_history.dat", "data/" + newUsername + "_history.dat");
 
-        // update session if current user is renamed
         if (currentUser != null && currentUser.getUsername().equals(oldUsername)) {
             currentUser = user;
         }
@@ -127,7 +116,6 @@ public class UserService {
         return false;
     }
 
-    // rename file utility
     private void renameFile(String oldPath, String newPath) {
         File oldFile = new File(oldPath);
         File newFile = new File(newPath);
