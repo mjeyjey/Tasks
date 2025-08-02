@@ -1,23 +1,4 @@
-<!-- 
 
-File: fragments/navbar.html -- comment
-<div th:fragment="navbar">
-    <nav>
-        <ul>
-            Admin Navbar -- comment
-            <li th:if="${user != null and user.admin}"><a href="/admin_dashboard">User Records</a></li>
-            <li th:if="${user != null and user.admin}"><a href="/settings">Settings</a></li>
-            <li th:if="${user != null and user.admin}"><a href="/logout">Logout</a></li>
-
-            User Navbar -- commetn
-            <li th:if="${user != null and !user.admin}"><a href="/dashboard">Home</a></li>
-            <li th:if="${user != null and !user.admin}"><a href="/transaction">History</a></li>
-            <li th:if="${user != null and !user.admin}"><a href="/settings">Settings</a></li>
-            <li th:if="${user != null and !user.admin}"><a href="/logout">Logout</a></li>
-        </ul>
-    </nav>
-    <hr>
-</div> -->
 
 <!-- File: templates/fragments/navbar.html -->
 <div th:fragment="navbar">
