@@ -28,29 +28,25 @@ public class TransactionController {
     @Autowired
     private UserService userService;
 
-    // returns path to the user's balance file
     private String getBalanceFilePath(String username) {
         return "data/" + username + "_balance.dat";
     }
 
-    // returns path to the user's transaction history file
     private String getHistoryFilePath(String username) {
         return "data/" + username + "_history.dat";
     }
 
-    // loads balance for a user from file
     private double loadBalance(String username) {
         try (DataInputStream in = new DataInputStream(new FileInputStream(getBalanceFilePath(username)))) {
             return in.readDouble();
         } catch (IOException e) {
-            return 0.0; // default to zero if file doesn't exist
+            return 0.0; 
         }
     }
 
-    // saves balance for a user to file
     private void saveBalance(String username, double balance) {
         try {
-            new File("data").mkdirs(); // ensure the "data" folder exists
+            new File("data").mkdirs(); 
             try (DataOutputStream out = new DataOutputStream(new FileOutputStream(getBalanceFilePath(username)))) {
                 out.writeDouble(balance);
             }
@@ -59,19 +55,17 @@ public class TransactionController {
         }
     }
 
-    // loads transaction history list from file
     private List<String> loadHistory(String username) {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(getHistoryFilePath(username)))) {
             return (List<String>) in.readObject();
         } catch (Exception e) {
-            return new ArrayList<>(); // return empty list if no history
+            return new ArrayList<>(); 
         }
     }
 
-    // saves transaction history list to file
     private void saveHistory(String username, List<String> history) {
         try {
-            new File("data").mkdirs(); // ensure the "data" folder exists
+            new File("data").mkdirs(); 
             try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(getHistoryFilePath(username)))) {
                 out.writeObject(history);
             }
@@ -80,40 +74,37 @@ public class TransactionController {
         }
     }
 
-    // shows deposit form
     @GetMapping("/deposit")
     public String showDeposit() {
         return "deposit";
     }
 
-    // process deposit transaction
     @PostMapping("/deposit")
     public String doDeposit(@RequestParam double amount, Model model) {
-        User user = userService.getCurrentUser(); //  get the current logged-in user
+        User user = userService.getCurrentUser(); 
         String username = user.getUsername();
 
         double balance = loadBalance(username);
-        balance += amount; // update balance
-        saveBalance(username, balance); //  save to file
+        balance += amount; 
+        saveBalance(username, balance); 
 
         List<String> history = loadHistory(username);
         String log = "Deposited ₱" + amount + " on " + LocalDateTime.now();
-        history.add(log); // add to history
+        history.add(log); 
         saveHistory(username, history);
 
         model.addAttribute("message", log);
         model.addAttribute("balance", balance);
-        model.addAttribute("user", user); // required for receipt.html
+        model.addAttribute("user", user); 
         return "receipt";
     }
 
-    // show withdraw form
+   
     @GetMapping("/withdraw")
     public String showWithdraw() {
         return "withdraw";
     }
 
-    // process withdrawal
     @PostMapping("/withdraw")
     public String doWithdraw(@RequestParam double amount, Model model) {
         User user = userService.getCurrentUser();
@@ -139,13 +130,11 @@ public class TransactionController {
         return "receipt";
     }
 
-    // cash-in form
     @GetMapping("/cashin")
     public String showCashIn() {
         return "cashin";
     }
 
-    // processes cash-in
     @PostMapping("/cashin")
     public String doCashIn(@RequestParam double amount, Model model) {
         User user = userService.getCurrentUser();
@@ -166,13 +155,11 @@ public class TransactionController {
         return "receipt";
     }
 
-    // shows send money form
     @GetMapping("/send")
     public String showSend() {
         return "send";
     }
 
-    // process send transaction
     @PostMapping("/send")
     public String doSend(@RequestParam double amount,
                          @RequestParam String recipient,
@@ -200,7 +187,6 @@ public class TransactionController {
         return "receipt";
     }
 
-    // display transaction history
     @GetMapping("/transaction")
     public String showHistory(Model model) {
         User user = userService.getCurrentUser();
