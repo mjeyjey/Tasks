@@ -65,7 +65,7 @@ public class User implements Serializable {
         return false;
     }
 
-    // transaction logging
+    // transaction 
     public void addTransaction(String log) {
         transactionHistory.add(log);
     }
