@@ -1,0 +1,73 @@
+/* deposit.css */
+.deposit-body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f1f5fc;
+    margin: 0;
+    padding-bottom: 80px; /* room for bottom navbar */
+}
+
+.deposit-container {
+    max-width: 400px;
+    margin: 4rem auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.deposit-container h2 {
+    color: #007AFF;
+    margin-bottom: 1.5rem;
+}
+
+.deposit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.deposit-form label {
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+.deposit-form input {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.deposit-form button {
+    background-color: #007AFF;
+    color: white;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.deposit-form button:hover {
+    background-color: #005fcc;
+}
+
+.cancel-button {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.cancel-button:hover {
+    background-color: #5a6268;
+}

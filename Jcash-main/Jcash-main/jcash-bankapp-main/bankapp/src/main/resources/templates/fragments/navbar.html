@@ -1,0 +1,42 @@
+<!-- 
+
+File: fragments/navbar.html -- comment
+<div th:fragment="navbar">
+    <nav>
+        <ul>
+            Admin Navbar -- comment
+            <li th:if="${user != null and user.admin}"><a href="/admin_dashboard">User Records</a></li>
+            <li th:if="${user != null and user.admin}"><a href="/settings">Settings</a></li>
+            <li th:if="${user != null and user.admin}"><a href="/logout">Logout</a></li>
+
+            User Navbar -- commetn
+            <li th:if="${user != null and !user.admin}"><a href="/dashboard">Home</a></li>
+            <li th:if="${user != null and !user.admin}"><a href="/transaction">History</a></li>
+            <li th:if="${user != null and !user.admin}"><a href="/settings">Settings</a></li>
+            <li th:if="${user != null and !user.admin}"><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <hr>
+</div> -->
+
+<!-- File: templates/fragments/navbar.html -->
+<div th:fragment="navbar">
+    <nav class="gcash-navbar">
+
+        <!-- Admin Navbar -->
+        <ul class="gcash-nav-list" th:if="${user != null and user.admin}">
+            <li><a href="/admin_dashboard"><i class="icon">📋</i><span>User Records</span></a></li>
+            <li><a href="/settings"><i class="icon">⚙️</i><span>Settings</span></a></li>
+            <li><a href="/logout"><i class="icon">🚪</i><span>Logout</span></a></li>
+        </ul>
+
+        <!-- User Navbar -->
+        <ul class="gcash-nav-list" th:if="${user != null and !user.admin}">
+            <li><a href="/dashboard"><i class="icon">🏠</i><span>Home</span></a></li>
+            <li><a href="/transaction"><i class="icon">📜</i><span>History</span></a></li>
+            <li><a href="/settings"><i class="icon">⚙️</i><span>Settings</span></a></li>
+            <li><a href="/logout"><i class="icon">🚪</i><span>Logout</span></a></li>
+        </ul>
+
+    </nav>
+</div>

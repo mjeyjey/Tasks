@@ -1,0 +1,50 @@
+/* receipt.css */
+.receipt-body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f1f5fc;
+    margin: 0;
+    padding-bottom: 80px; /* navbar space */
+}
+
+.receipt-container {
+    max-width: 500px;
+    margin: 4rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.receipt-container h2 {
+    color: #007AFF;
+    margin-bottom: 1.2rem;
+}
+
+.receipt-message {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.receipt-balance {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #007AFF;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #007AFF;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: #005fcc;
+}
