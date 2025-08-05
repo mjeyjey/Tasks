@@ -1,6 +1,7 @@
 package assignment;
 import java.util.Scanner;
-// Odd or Even? positive or negetive? or zero?
+
+// Odd or Even? positive or negetive?  or zero?
 
 public class OddorEven {
     public static void main(String[] args) {

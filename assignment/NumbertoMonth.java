@@ -1,8 +1,9 @@
 package assignment;
+import java.util.Scanner;
 
 // Number to Month
 
-import java.util.Scanner;
+
 
 public class NumbertoMonth {
     public static void main(String[] args) {
