@@ -1,7 +1,7 @@
 package assignment;
 import java.util.Scanner;
 
-//  Numner to day of the week   
+//  Numner to day of the week .  
 
 public class NumbertoDay {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package assignment;
 import java.util.Scanner;
 
-// Check vowels and consonants
+// Check vowels and consonants.
 
 public class VowelsConsonants {
     public static void main(String[] args) {

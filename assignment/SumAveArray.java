@@ -1,7 +1,7 @@
 package assignment;
 import java.util.Scanner;
 
-// sum and average of input array numbers
+// sum and average of input array numbers.
 
 public class SumAveArray {
     public static void main(String[] args) {

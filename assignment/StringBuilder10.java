@@ -1,7 +1,7 @@
 package assignment;
 import java.util.Scanner;
 
-// String Builder 10 characters
+// String Builder 10 characters.
 
 public class StringBuilder10 {
     public static void main(String[] args) {

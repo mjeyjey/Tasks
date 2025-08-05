@@ -1,7 +1,7 @@
 package assignment;
 import java.util.Scanner;
 
-// Count number of word in a input
+// Count number of word in a input.
 
 public class WordCounter {
     public static void main(String[] args) {

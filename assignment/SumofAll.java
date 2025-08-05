@@ -1,7 +1,7 @@
 package assignment;
 import java.util.Scanner;
 
-// Sum of all Integer Inputs
+// Sum of all Integer Inputs.
 
 public class SumofAll {
     public static void main(String[] args) {

@@ -1,8 +1,7 @@
 package assignment;
 import java.util.Scanner;
 
-// Score to Grade F-A
-
+// Score to Grade F-A.
 
 public class ScoretoGrade {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package assignment;
 import java.util.Scanner;
 
-// String Methods
+// String Methods.
 
 public class StringMethods {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package assignment;
 import java.util.Scanner; 
 
-// Integer input from the user and uses a fo r loop to generate following pattern
+// Integer input from the user and uses a fo r loop to generate following pattern.
 
 public class LoopforPattern {
     public static void main(String[] args) {
