@@ -1,0 +1,75 @@
+/* General body styling */
+body.login-body {
+    background-color: #f2f6fc;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login box */
+.login-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+/* Title */
+.login-title {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Form layout */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.login-form label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Inputs */
+.login-form input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button */
+.login-button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.login-button:hover {
+    background-color: #357ab7;
+}
+
+/* Register link */
+.register-link {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Error message */
+.error-message {
+    color: red;
+    margin-top: 1rem;
+}

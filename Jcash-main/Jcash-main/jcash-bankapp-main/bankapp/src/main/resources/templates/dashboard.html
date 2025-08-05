@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link href="/css/dashboard.css" rel="stylesheet">
+     <link rel="stylesheet" href="/css/navbar.css">  
+</head>
+<body class="dashboard-body">
+
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+   <h2 class="dashboard-title">
+            Welcome to JcashMOD, <span th:text="${user.username}"></span>!
+        </h2>
+
+    <div class="dashboard-container">
+     
+          <p class="transaction-title">Your Current Balance:</p>
+        <h3 class="dashboard-balance">
+            ₱<span th:text="${balance}"></span>
+        </h3>
+
+        <div class="transaction-section">
+            <p class="transaction-title">Select a Transaction:</p>
+            <ul class="transaction-list">
+                <li><a href="deposit" class="transaction-link">Deposit</a></li>
+                <li><a href="withdraw" class="transaction-link">Withdraw</a></li>
+                <li><a href="cashin" class="transaction-link">Cash In</a></li>
+                <li><a href="send" class="transaction-link">Transfer</a></li>
+                <li><span class="transaction-disabled">Bank Transfer (coming soon)</span></li>
+            </ul>
+        </div>
+       
+    </div>
+
+</body>
+</html>

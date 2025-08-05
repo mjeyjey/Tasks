@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - jCash Mod</title>
+
+    <!-- Custom CSS -->
+    <link href="/css/login.css" rel="stylesheet">
+</head>
+<body class="login-body">
+
+    <div class="login-container">
+        <h2 class="login-title">Welcome to JCash Mod</h2>
+
+        <form action="/login" method="post" class="login-form">
+            <label>Username:
+                <input type="text" name="username" required>
+            </label>
+            <label>Password:
+                <input type="password" name="password" required>
+            </label>
+
+            <button type="submit" class="login-button">Login</button>
+
+            <p class="register-link">
+                Don't have an account? <a href="/register">Register here</a>
+            </p>
+        </form>
+
+        <p th:if="${error}" th:text="${error}" class="error-message"></p>
+    </div>
+
+</body>
+</html>

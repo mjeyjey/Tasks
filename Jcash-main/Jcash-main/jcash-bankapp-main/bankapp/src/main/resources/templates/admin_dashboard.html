@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link href="/css/admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body class="admin-body">
+
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+   <h2 class="admin-title">Welcome, <span th:text="${user.username}">admin</span>!</h2>
+
+    <div class="admin-container">
+     
+        <p class="section-title">All Registered Users:</p>
+
+        <div class="table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Balance</th>
+                        <th>Transaction Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="u : ${allUsers}">
+                        <td th:text="${u.username}">sample</td>
+                        <td>₱<span th:text="${u.balance}">0.00</span></td>
+                        <td th:text="${u.transactionCount}">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

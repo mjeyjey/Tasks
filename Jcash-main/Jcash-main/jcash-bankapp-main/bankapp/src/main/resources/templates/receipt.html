@@ -1,0 +1,28 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Transaction Receipt</title>
+    <link rel="stylesheet" href="/css/receipt.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body class="receipt-body">
+
+    <!-- Include Navbar -->
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <div class="receipt-container">
+        <h2>Transaction Receipt</h2>
+
+        <!-- Transaction Message -->
+        <p class="receipt-message" th:text="${message}">Transaction details here.</p>
+
+        <!-- Current Balance -->
+        <p class="receipt-balance">Current Balance: ₱<span th:text="${balance}">0.00</span></p>
+
+        <a href="/dashboard" class="back-button">← Back to Home</a>
+    </div>
+
+</body>
+</html>
